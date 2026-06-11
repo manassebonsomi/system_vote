@@ -2,7 +2,7 @@
    CONFIGURATION API
 ========================== */
 
-const API = "https://script.google.com/macros/s/AKfycbwjAb1JNdI90Wt_7MbfxOiEEqWXiawfrP21oLfXap6CzTJYOtUT2_cCH2EUo5Ni3j8uWg/exec";
+const API = "https://script.google.com/macros/s/AKfycbwTBJp3QobxVOBJcoWQxFOHOIAsQGkfktovGBIG7e7_GjTVQEr8aFUghoMpQmdxZZYmgw/exec";
 
 /* ==========================
    AOS INITIALIZATION
