@@ -2,7 +2,7 @@
    CONFIG API
 ========================================== */
 
-const API_URL= "https://script.google.com/macros/s/AKfycbxbdgWuqQRW0ZnLwGgVNpk_YZbX05JYmy_L3T6hrH8mQJLO5W7T1afy04eYoRjb0wuELw/exec";
+const API_URL= "https://script.google.com/macros/s/AKfycbwjAb1JNdI90Wt_7MbfxOiEEqWXiawfrP21oLfXap6CzTJYOtUT2_cCH2EUo5Ni3j8uWg/exec";
 
 /* ==========================================
    MENU MOBILE
@@ -367,11 +367,26 @@ async function confirmVote() {
             return;
         }
 
+        const captchaResponse =
+        grecaptcha.getResponse();
+
+        if(!captchaResponse){
+
+            showToast(
+                "Veuillez confirmer que vous n'êtes pas un robot",
+                "warning"
+            );
+
+            return;
+        }
+
         const ip = await getUserIP();
         
         const voteData = {
 
             action: "addVote",
+
+            captcha: captchaResponse,
 
             domainId: domaineId,
 
