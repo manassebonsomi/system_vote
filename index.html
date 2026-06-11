@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plateforme Officielle de Vote</title>
+
+    <meta name="description"
+        content="Votez pour vos candidats favoris à travers notre plateforme officielle de vote en ligne.">
+
+    <meta name="keywords"
+        content="vote, concours, élection, candidat, plateforme de vote">
+
+    <meta name="author"
+        content="Votre Organisation">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ==========================
+         HEADER / NAVBAR
+    =========================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="nav-container">
+
+                <!-- LOGO -->
+
+                <a href="index.html"
+                    class="logo">
+
+                    <img src="images/logo.jpg"
+                        alt="Logo">
+
+                </a>
+
+                <!-- MENU -->
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#hero">
+                            Accueil
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about">
+                            À propos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#domaines">
+                            domaine
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#top-candidates">
+                            Classement
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#newsletter">
+                            Newsletter
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- BOUTON -->
+
+                <a href="#domaines"
+                    class="vote-btn">
+                    Voter maintenant
+                </a>
+
+                <!-- HAMBURGER -->
+
+                <div class="hamburger">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ==========================
+         HERO
+    =========================== -->
+
+    <section id="hero"
+        class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <span class="badge">
+                Plateforme Officielle de Vote
+            </span>
+
+            <h1>
+                Votez pour vos candidats préférés
+            </h1>
+
+            <p>
+                Découvrez les catégories disponibles,
+                soutenez vos favoris et participez
+                à un événement exceptionnel.
+            </p>
+
+            <!-- COMPTE À REBOURS -->
+
+            <div class="event-counter">
+
+                <div>
+                    <span id="days">00</span>
+                    <small>Jours</small>
+                </div>
+
+                <div>
+                    <span id="hours">00</span>
+                    <small>Heures</small>
+                </div>
+
+                <div>
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+
+                <div>
+                    <span id="seconds">00</span>
+                    <small>Secondes</small>
+                </div>
+
+            </div>
+
+            <div class="hero-buttons">
+
+                <a href="#domaines"
+                    class="btn-primary">
+
+                    Commencer à voter
+
+                </a>
+
+                <a href="#top-candidates"
+                    class="btn-secondary">
+
+                    Voir le classement
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         STATISTIQUES
+    =========================== -->
+
+    <section class="stats">
+
+        <div class="container">
+
+            <div class="stats-grid">
+
+                <div class="stat-card"
+                    data-aos="zoom-in">
+
+                    <i class="fa-solid fa-check-to-slot"></i>
+
+                    <h2 class="counter"
+                        data-target="15000">
+                        0
+                    </h2>
+
+                    <p>
+                        Votes enregistrés
+                    </p>
+
+                </div>
+
+                <div class="stat-card"
+                    data-aos="zoom-in"
+                    data-aos-delay="200">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h2 class="counter"
+                        data-target="120">
+                        0
+                    </h2>
+
+                    <p>
+                        Candidats
+                    </p>
+
+                </div>
+
+                <div class="stat-card"
+                    data-aos="zoom-in"
+                    data-aos-delay="400">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <h2 class="counter"
+                        data-target="12">
+                        0
+                    </h2>
+
+                    <p>
+                        Catégories
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         ABOUT
+    =========================== -->
+
+    <section id="about"
+        class="about">
+
+        <div class="container">
+
+            <div class="section-header"
+                data-aos="fade-up">
+
+                <span class="section-subtitle">
+                    À propos
+                </span>
+
+                <h2 class="section-title">
+                    Une plateforme moderne et sécurisée
+                </h2>
+
+                <p class="section-description">
+
+                    Notre système de vote en ligne garantit
+                    transparence, sécurité et accessibilité
+                    pour tous les participants.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         DOMAINES
+    =========================== -->
+
+    <section id="domaines"
+        class="domaines">
+
+        <div class="container">
+
+            <div class="section-header"
+                data-aos="fade-up">
+
+                <span class="section-subtitle">
+                    domaines
+                </span>
+
+                <h2 class="section-title">
+                    Choisissez votre domaine de prédilection
+                </h2>
+
+                <p class="section-description">
+
+                    Sélectionnez un domaine pour découvrir
+                    les candidats et voter.
+
+                </p>
+
+            </div>
+
+            <div class="domaines-grid"
+                id="domainesContainer">
+
+                <!-- JS -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         TOP CANDIDATS
+    =========================== -->
+
+    <section id="top-candidates"
+        class="top-candidates">
+
+        <div class="container">
+
+            <div class="section-header"
+                data-aos="fade-up">
+
+                <span class="section-subtitle">
+                    Classement
+                </span>
+
+                <h2 class="section-title">
+                    Top candidats
+                </h2>
+
+            </div>
+
+            <div class="candidates-grid">
+
+                <div class="candidate-card"
+                    data-aos="fade-up">
+
+                    <img src="images/candidates/candidate1.jpg"
+                        alt="Candidat">
+
+                    <div class="candidate-info">
+
+                        <h3>
+                            Nom du candidat
+                        </h3>
+
+                        <span>
+                            Catégorie Musique
+                        </span>
+
+                        <p>
+                            2 500 votes
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="candidate-card"
+                    data-aos="fade-up"
+                    data-aos-delay="200">
+
+                    <img src="images/candidates/candidate2.jpg"
+                        alt="Candidat">
+
+                    <div class="candidate-info">
+
+                        <h3>
+                            Nom du candidat
+                        </h3>
+
+                        <span>
+                            Catégorie Sport
+                        </span>
+
+                        <p>
+                            2 100 votes
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="candidate-card"
+                    data-aos="fade-up"
+                    data-aos-delay="400">
+
+                    <img src="images/candidates/candidate3.jpg"
+                        alt="Candidat">
+
+                    <div class="candidate-info">
+
+                        <h3>
+                            Nom du candidat
+                        </h3>
+
+                        <span>
+                            Catégorie Influenceur
+                        </span>
+
+                        <p>
+                            1 800 votes
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         NEWSLETTER
+    =========================== -->
+
+    <section id="newsletter"
+        class="newsletter">
+
+        <div class="container">
+
+            <div class="newsletter-content">
+
+                <h2>
+                    Restez informé
+                </h2>
+
+                <p>
+
+                    Recevez toutes les actualités de l'événement.
+
+                </p>
+
+                <form id="newsletterForm">
+
+                    <input type="email"
+                        placeholder="Votre adresse email"
+                        required>
+
+                    <button type="submit">
+
+                        S'abonner
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         CONTACT
+    =========================== -->
+
+   <section id="contact"
+        class="contact">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-subtitle">
+                    Contact
+                </span>
+
+                <h2 class="section-title">
+                    Besoin d'informations ?
+                </h2>
+
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <h3>Téléphone</h3>
+
+                    <p>+243 826 844 992</p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <h3>Email</h3>
+
+                    <p>abdhoulevent@gmail.com</p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <h3>Adresse</h3>
+
+                    <p>Matete, Kinshasa, RDC</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <img src="images/logo.jpg"
+                    alt="Logo" class="logo-footer">
+
+                <p>
+                    © 2026 Plateforme Officielle de Vote.
+                    Tous droits réservés.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- JS -->
+    <script src="js/menu.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

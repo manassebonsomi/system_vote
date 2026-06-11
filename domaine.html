@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Candidats - Domaine</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/domaine.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="nav-container">
+
+                <!-- LOGO -->
+
+                <a href="index.html"
+                    class="logo">
+
+                    <img src="images/logo.jpg"
+                        alt="Logo">
+
+                </a>
+
+                <!-- MENU -->
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html">
+                            Accueil
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#about">
+                            À propos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#domaines">
+                            Domaines
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#top-candidates">
+                            Classement
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#newsletter">
+                            Newsletter
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- BOUTON -->
+
+                <a href="index.html#domaines"
+                    class="vote-btn">
+                    Voter maintenant
+                </a>
+
+                <!-- HAMBURGER -->
+
+                <div class="hamburger">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+<!-- HEADER -->
+<div class="page-header">
+    <h1 id="domaineTitle">Domaine</h1>
+    <p>Choisissez votre candidat et votez</p>
+</div>
+
+<!-- CANDIDATS -->
+<section class="categories-section">
+
+    <div class="container">
+
+        <div id="categoriesContainer">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MODAL VOTE -->
+<div class="modal" id="voteModal">
+
+    <div class="modal-content">
+
+        <h3>Confirmer votre vote</h3>
+
+        <p id="selectedCandidate"></p>
+
+        <!-- <input type="email" id="emailInput" placeholder="Votre email" required> -->
+        <div class="g-recaptcha"
+            data-sitekey="6LdFXhktAAAAADhm02tL-E9t9wDgczLUl48YNk5t">
+        </div>
+        <button onclick="confirmVote()">Confirmer le vote</button>
+
+    </div>
+</div>
+
+<section id="newsletter"
+        class="newsletter">
+
+        <div class="container">
+
+            <div class="newsletter-content">
+
+                <h2>
+                    Restez informé
+                </h2>
+
+                <p>
+
+                    Recevez toutes les actualités de l'événement.
+
+                </p>
+
+                <form id="newsletterForm">
+
+                    <input type="email"
+                        placeholder="Votre adresse email"
+                        required>
+
+                    <button type="submit">
+
+                        S'abonner
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         CONTACT
+    =========================== -->
+
+    <section id="contact"
+        class="contact">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-subtitle">
+                    Contact
+                </span>
+
+                <h2 class="section-title">
+                    Besoin d'informations ?
+                </h2>
+
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <h3>Téléphone</h3>
+
+                    <p>+243 826 844 992</p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <h3>Email</h3>
+
+                    <p>abdhoulevent@gmail.com</p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <h3>Adresse</h3>
+
+                    <p>Matete, Kinshasa, RDC</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <img src="images/logo.jpg"
+                    alt="Logo" class="logo-footer">
+
+                <p>
+                    © 2026 Plateforme Officielle de Vote.
+                    Tous droits réservés.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"></script>
+<script src="js/domaine.js"></script>
+<script src="js/script.js"></script>
+<script src="js/menu.js"></script>
+
+<!-- LOADER -->
+
+<div id="loaderOverlay" class="loader-overlay">
+
+    <div class="loader-box">
+
+        <div class="spinner"></div>
+
+        <p id="loaderText">
+            Chargement des candidats...
+        </p>
+
+    </div>
+
+</div>
+
+<!-- NOTIFICATION -->
+
+<div id="toast" class="toast">
+    <span id="toastMessage"></span>
+</div>
+
+</body>
+
+</html>

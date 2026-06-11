@@ -1,0 +1,372 @@
+body{
+    font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    background:#f8f9fb;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.page-header{
+    padding:120px 20px 40px;
+    text-align:center;
+}
+
+.page-header h1{
+    font-size:2.5rem;
+    font-weight:700;
+}
+
+.page-header p{
+    opacity:0.7;
+    margin-top:10px;
+}
+
+/* ==========================
+   GRID CANDIDATS
+========================== */
+
+.candidates-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    padding:40px 20px;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.candidate-card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.candidate-card:hover{
+    transform:translateY(-6px);
+}
+
+.candidate-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+/* ==========================
+   INFO
+========================== */
+
+.candidate-info{
+    padding:15px;
+    text-align:center;
+}
+
+.candidate-info h3{
+    font-size:1.1rem;
+    margin-bottom:5px;
+}
+
+.candidate-info p{
+    font-size:0.9rem;
+    opacity:0.7;
+}
+
+/* ==========================
+   CATEGORIES
+========================== */
+
+.categories-section{
+    padding:20px 20px 80px;
+}
+
+.category-block{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    margin-bottom:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.category-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.category-title{
+    font-size:1.8rem;
+    font-weight:700;
+    color:#C8A45D;
+}
+
+.category-description{
+    color:#777;
+    margin-top:5px;
+}
+
+.category-candidates{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+/* ==========================
+   LOADER
+========================== */
+
+.loader-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.95);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.loader-box{
+    text-align:center;
+}
+
+.spinner{
+    width:60px;
+    height:60px;
+    border:5px solid #eee;
+    border-top:5px solid #C8A45D;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:auto;
+}
+
+.loader-box p{
+    margin-top:15px;
+    font-weight:600;
+    color:#333;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* ==========================
+   TOAST NOTIFICATION
+========================== */
+
+.toast{
+    position:fixed;
+    top:30px;
+    right:30px;
+    background:#111827;
+    color:white;
+    padding:15px 20px;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    z-index:999999;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-20px);
+    transition:.3s;
+    max-width:350px;
+}
+
+.toast.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.toast.success{
+    border-left:5px solid #22c55e;
+}
+
+.toast.error{
+    border-left:5px solid #ef4444;
+}
+
+.toast.warning{
+    border-left:5px solid #f59e0b;
+}
+
+@media(max-width:768px){
+
+    .toast{
+        right:15px;
+        left:15px;
+        max-width:none;
+    }
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.vote-btn-card{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 18px;
+    background:#C8A45D;
+    color:white;
+    border-radius:25px;
+    cursor:pointer;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.vote-btn-card:hover{
+    background:#A67C3D;
+    transform:scale(1.05);
+}
+
+/* ==========================
+   MODAL (DESKTOP)
+========================== */
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:999;
+}
+
+.modal-content{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    width:100%;
+    max-width:420px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-content input{
+    width:100%;
+    padding:12px;
+    margin:12px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+}
+
+.modal-content input:focus{
+    border-color:#C8A45D;
+}
+
+.modal-content button{
+    width:100%;
+    padding:12px;
+    background:#C8A45D;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.modal-content button:hover{
+    background:#A67C3D;
+}
+
+/* ==========================
+   RESPONSIVE TABLET
+========================== */
+
+@media (max-width:992px){
+
+    .page-header h1{
+        font-size:2rem;
+    }
+
+    .candidate-card img{
+        height:240px;
+    }
+}
+
+/* ==========================
+   RESPONSIVE MOBILE
+========================== */
+
+@media (max-width:768px){
+
+    .page-header{
+        padding:100px 15px 30px;
+    }
+
+    .page-header h1{
+        font-size:1.8rem;
+    }
+
+    .candidates-grid{
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        gap:18px;
+        padding:20px 15px;
+    }
+
+    .candidate-card img{
+        height:220px;
+    }
+
+    .modal-content{
+        padding:20px;
+        border-radius:10px;
+    }
+}
+
+/* ==========================
+   PETITS TELEPHONES
+========================== */
+
+@media (max-width:480px){
+
+    .page-header h1{
+        font-size:1.5rem;
+    }
+
+    .page-header p{
+        font-size:0.9rem;
+    }
+
+    .candidate-card img{
+        height:200px;
+    }
+
+    .vote-btn-card{
+        padding:8px 14px;
+        font-size:0.9rem;
+    }
+
+    .modal-content{
+        padding:18px;
+    }
+
+    .modal-content button{
+        padding:10px;
+    }
+}
