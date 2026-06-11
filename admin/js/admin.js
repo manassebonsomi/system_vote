@@ -72,7 +72,7 @@ function showConfirm(message){
 const CLOUD_NAME = "doepcl1iu";
 const UPLOAD_PRESET = "bmm_prod_votes";
 
-const API = "https://script.google.com/macros/s/AKfycbwTBJp3QobxVOBJcoWQxFOHOIAsQGkfktovGBIG7e7_GjTVQEr8aFUghoMpQmdxZZYmgw/exec";
+const API = "https://script.google.com/macros/s/AKfycbz9oiSrmpafYmOn1QoP_o7gLuGF_8RyqKo1ppzLIuospKK8rdpCmWFI3ZMYbSR81VNs8w/exec";
 
 /* ===================================
    PREVIEW IMAGE
