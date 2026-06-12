@@ -441,3 +441,19 @@ document.addEventListener(
 
     }
 );
+
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+        loader.classList.add("hide-loader");
+
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 600);
+
+    }, 1200);
+
+});

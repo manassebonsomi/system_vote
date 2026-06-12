@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body style="display:none;" id="adminBody">
 
     <!-- ==========================
          HEADER
@@ -49,7 +49,7 @@
 
         <div class="header-right">
 
-            <button class="logout-btn">
+            <button id="logoutBtn" class="logout-btn">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 Déconnexion
             </button>
@@ -344,15 +344,17 @@
 
                         <tr>
 
-                            <th>Date</th>
+                            <th>Candidat</th>
+
+                            <th>Category</th>
 
                             <th>Domaine</th>
 
-                            <th>Catégorie</th>
-
-                            <th>Candidat</th>
-
                             <th>IP</th>
+
+                            <th>Fingerprint</th>
+
+                            <th>Date</th>
 
                         </tr>
 
@@ -551,7 +553,8 @@
     </div>
 
 </div>
-
+<script type="module" src="guard.js"></script>
+<script type="module" src="logout.js"></script>
 </body>
 
 </html>

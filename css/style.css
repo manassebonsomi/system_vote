@@ -39,6 +39,206 @@ body{
 }
 
 /* ==========================
+   INTRO SECTION PREMIUM
+========================== */
+
+.intro{
+    padding:100px 0;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    overflow:hidden;
+}
+
+.intro-container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.intro-content{
+    flex:1;
+}
+
+.intro-badge{
+    display:inline-block;
+    padding:8px 15px;
+    background:#2563eb;
+    border-radius:50px;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.intro h1{
+    font-size:42px;
+    margin-bottom:15px;
+    line-height:1.2;
+}
+
+.intro p{
+    font-size:16px;
+    opacity:0.85;
+    margin-bottom:25px;
+}
+
+.intro-actions{
+    display:flex;
+    gap:15px;
+    margin-bottom:40px;
+}
+
+.btn-primary{
+    background:#2563eb;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+.btn-secondary{
+    border:1px solid white;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+.intro-stats{
+    display:flex;
+    gap:30px;
+}
+
+.intro-stat h3{
+    font-size:20px;
+    color:#38bdf8;
+}
+
+.intro-stat p{
+    font-size:13px;
+    opacity:0.7;
+}
+
+.intro-visual{
+    flex:1;
+    text-align:center;
+}
+
+.intro-visual img{
+    width:100%;
+    max-width:400px;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0px);}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .intro-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .intro-actions{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .intro-stats{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+}
+
+/* ==========================
+   LOADER GLOBAL
+========================== */
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #0b0f1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.loader-box {
+    text-align: center;
+    color: white;
+}
+
+/* ==========================
+   CERCLE LOGO ANIMÉ
+========================== */
+
+.logo-spinner {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto; 
+}
+
+.logo-spinner::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top: 3px solid #c7db11;
+    border-right: 3px solid #052bff;
+    animation: spin 1s linear infinite;
+}
+
+/* LOGO */
+.logo-spinner img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+/* animation rotation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* texte */
+.loader-box h2 {
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.loader-box p {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* disparition fluide */
+.hide-loader {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s ease;
+}
+
+/* ==========================
    GLOBAL CONTAINER
 ========================== */
 
