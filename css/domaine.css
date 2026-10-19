@@ -95,12 +95,12 @@ html, body{
 }
 
 .category-block{
-    background:white;
+    background:rgb(0, 0, 0);
     border-radius:20px;
     padding:30px;
     margin-bottom:40px;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+    color :white;
     width:100%;
     max-width:100%;
     overflow:hidden; /* empêche dépassement */
@@ -138,6 +138,13 @@ html, body{
 
     width:100%;
     max-width:100%;
+}
+
+.candidate-card {
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+    color:black;
 }
 
 .candidate-card img{
