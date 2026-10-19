@@ -110,11 +110,97 @@
 </div>
 
 <!-- CANDIDATS -->
-<section class="categories-section">
+<!-- ==========================
+     RECHERCHE DES CANDIDATS
+=========================== -->
+
+<section class="categories-section" id="categoriesSection">
 
     <div class="container">
 
+        <!-- BARRE DE RECHERCHE -->
+        <div class="candidate-search-tools">
+
+            <div class="candidate-search-heading">
+                <span class="search-eyebrow">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Recherche rapide
+                </span>
+
+                <h2>Retrouvez votre candidat</h2>
+
+                <p>
+                    Saisissez le nom du candidat que vous souhaitez retrouver.
+                </p>
+            </div>
+
+            <div class="candidate-search-bar">
+
+                <i
+                    class="fa-solid fa-magnifying-glass search-icon"
+                    aria-hidden="true">
+                </i>
+
+                <input
+                    type="search"
+                    id="candidateSearch"
+                    placeholder="Ex. : Abdhoul MPULALA..."
+                    autocomplete="off"
+                    aria-label="Rechercher un candidat par son nom"
+                    aria-controls="categoriesContainer"
+                >
+
+                <button
+                    type="button"
+                    id="clearCandidateSearch"
+                    class="search-clear"
+                    aria-label="Effacer la recherche"
+                    title="Effacer la recherche"
+                    hidden>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <p
+                class="search-results-info"
+                id="searchResultsInfo"
+                role="status"
+                aria-live="polite">
+                Les candidats seront affichés ici.
+            </p>
+
+        </div>
+
+        <!-- MESSAGE AUCUN RÉSULTAT -->
+        <div
+            class="no-search-results"
+            id="noSearchResults"
+            hidden>
+
+            <div class="no-results-icon">
+                <i class="fa-solid fa-user-slash"></i>
+            </div>
+
+            <h3>Aucun candidat trouvé</h3>
+
+            <p>
+                Vérifiez l'orthographe du nom ou essayez une autre recherche.
+            </p>
+
+            <button
+                type="button"
+                id="resetCandidateSearch">
+                <i class="fa-solid fa-rotate-left"></i>
+                Afficher tous les candidats
+            </button>
+
+        </div>
+
+        <!-- CATÉGORIES ET CANDIDATS -->
         <div id="categoriesContainer">
+
+            <!-- Contenu généré par domaine.js -->
 
         </div>
 

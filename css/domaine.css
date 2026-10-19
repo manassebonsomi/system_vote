@@ -134,10 +134,11 @@ html, body{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     justify-content:center;
-    gap:20px;
+    gap:22px;
 
     width:100%;
     max-width:100%;
+    min-width: 0;
 }
 
 .candidate-card {
@@ -150,6 +151,9 @@ html, body{
 .candidate-card img{
     width:100%;
     display:block;
+    max-width: 100%;
+    height: 240px;
+    object-fit: cover;
 }
 
 .categories-section,
@@ -407,5 +411,363 @@ html, body{
 
     .modal-content button{
         padding:10px;
+    }
+}
+
+
+/* ==========================================
+   RECHERCHE PROFESSIONNELLE DES CANDIDATS
+========================================== */
+
+/* ==========================================
+   RECHERCHE DES CANDIDATS — CORRECTION
+========================================== */
+
+.candidate-search-tools {
+    position: relative;
+    top: auto;
+    z-index: auto;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 28px;
+    margin: 0 0 35px;
+
+    background: #F8F9FB;
+    border: 1px solid rgba(200, 164, 93, 0.2);
+    border-radius: 20px;
+
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+
+    /* Empêche le contenu de déborder */
+    box-sizing: border-box;
+}
+
+.candidate-search-heading {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.search-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #A67C3D;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+
+    margin-bottom: 8px;
+}
+
+.candidate-search-heading h2 {
+    color: #172033;
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.candidate-search-heading p {
+    color: #64748B;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* Barre de recherche */
+
+.candidate-search-bar {
+    width: 100%;
+    max-width: 760px;
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 auto;
+
+    padding: 0 17px;
+
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.candidate-search-bar:focus-within {
+    border-color: #C8A45D;
+    box-shadow: 0 0 0 4px rgba(200, 164, 93, 0.13);
+}
+
+.candidate-search-bar .search-icon {
+    flex-shrink: 0;
+    color: #A67C3D;
+    font-size: 1.1rem;
+}
+
+.candidate-search-bar input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    height: 58px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    background: transparent;
+    color: #172033;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.candidate-search-bar input:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.candidate-search-bar input::placeholder {
+    color: #94A3B8;
+}
+
+.candidate-search-bar input::-webkit-search-cancel-button {
+    display: none;
+}
+
+/* Bouton effacer */
+
+.search-clear {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    color: #64748B;
+    background: #F1F5F9;
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.search-clear:hover {
+    background: #E2E8F0;
+    color: #172033;
+}
+
+.search-clear[hidden] {
+    display: none !important;
+}
+
+/* Nombre de résultats */
+
+.search-results-info {
+    min-height: 20px;
+    margin-top: 12px;
+
+    text-align: center;
+    color: #64748B;
+
+    font-size: 0.85rem;
+}
+
+/* Aucun résultat */
+
+.no-search-results {
+    max-width: 650px;
+    margin: 20px auto 40px;
+    padding: 40px 24px;
+
+    text-align: center;
+
+    background: #FFFFFF;
+    border: 1px solid #E8ECF2;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.no-search-results[hidden] {
+    display: none !important;
+}
+
+.no-results-icon {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    background: #F8F1E4;
+    color: #A67C3D;
+
+    border-radius: 50%;
+    font-size: 1.6rem;
+}
+
+.no-search-results h3 {
+    color: #172033;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.no-search-results p {
+    color: #64748B;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.no-search-results button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    width: auto;
+    max-width: 100%;
+
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #C8A45D;
+    color: #FFFFFF;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.no-search-results button:hover {
+    background: #A67C3D;
+}
+
+/* Masquer les éléments filtrés */
+
+.candidate-card[hidden],
+.category-block[hidden] {
+    display: none !important;
+}
+
+/* Responsive tablette */
+
+@media (max-width: 768px) {
+
+    .categories-section {
+        padding: 25px 15px 60px;
+    }
+
+    .candidate-search-tools {
+        position: relative;
+        top: auto;
+        padding: 20px 15px;
+        margin-bottom: 25px;
+        border-radius: 15px;
+    }
+
+    .candidate-search-heading {
+        margin-bottom: 14px;
+    }
+
+    .candidate-search-heading p {
+        font-size: 0.85rem;
+    }
+
+    .candidate-search-bar {
+        min-height: 54px;
+        padding: 0 12px;
+        gap: 10px;
+        border-radius: 12px;
+    }
+
+    .candidate-search-bar input {
+        height: 52px;
+        font-size: 0.9rem;
+    }
+
+    .search-results-info {
+        font-size: 0.8rem;
+    }
+
+    .no-search-results {
+        padding: 30px 18px;
+    }
+}
+
+/* Responsive petits téléphones */
+
+@media (max-width: 480px) {
+
+    .categories-section {
+        padding: 20px 12px 45px;
+    }
+
+    .candidate-search-tools {
+        position: relative;
+        top: auto;
+
+        width: 100%;
+        padding: 16px 12px;
+        margin-bottom: 20px;
+
+        border-radius: 13px;
+    }
+
+    .candidate-search-heading h2 {
+        font-size: 1.15rem;
+    }
+
+    .candidate-search-heading p {
+        font-size: 0.82rem;
+    }
+
+    .candidate-search-bar {
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .candidate-search-bar input {
+        font-size: 0.85rem;
+    }
+
+    .search-clear {
+        width: 32px;
+        height: 32px;
+    }
+
+    .no-search-results h3 {
+        font-size: 1.05rem;
+    }
+
+    .no-search-results button {
+        width: 100%;
     }
 }

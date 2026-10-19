@@ -39,6 +39,200 @@ const categoriesContainer =
 document.getElementById("categoriesContainer");
 
 /* ==========================================
+   RECHERCHE INSTANTANÉE DES CANDIDATS
+========================================== */
+
+const candidateSearchInput =
+    document.getElementById("candidateSearch");
+
+const clearCandidateSearch =
+    document.getElementById("clearCandidateSearch");
+
+const searchResultsInfo =
+    document.getElementById("searchResultsInfo");
+
+const noSearchResults =
+    document.getElementById("noSearchResults");
+
+
+/*
+ * Normalise le texte :
+ * - minuscules ;
+ * - suppression des accents ;
+ * - suppression des espaces inutiles.
+ *
+ * Exemple :
+ * "Député National" devient "depute national".
+ */
+
+function normalizeSearchText(value) {
+
+    return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+
+}
+
+
+/* Appliquer le filtre sur les candidats affichés */
+
+function filterCandidates() {
+
+    if (!categoriesContainer) {
+        return;
+    }
+
+    const searchTerm = normalizeSearchText(
+        candidateSearchInput?.value || ""
+    );
+
+    const categoryBlocks =
+        categoriesContainer.querySelectorAll(".category-block");
+
+    let totalCandidates = 0;
+    let visibleCandidates = 0;
+
+    categoryBlocks.forEach(categoryBlock => {
+
+        const candidateCards =
+            categoryBlock.querySelectorAll(".candidate-card");
+
+        let visibleInCategory = 0;
+
+        candidateCards.forEach(candidateCard => {
+
+            totalCandidates++;
+
+            const candidateName =
+                candidateCard.querySelector(".candidate-info h3")
+                    ?.textContent || "";
+
+            const normalizedName =
+                normalizeSearchText(candidateName);
+
+            const matches =
+                searchTerm === "" ||
+                normalizedName.includes(searchTerm);
+
+            candidateCard.hidden = !matches;
+
+            if (matches) {
+                visibleInCategory++;
+                visibleCandidates++;
+            }
+
+        });
+
+        /*
+         * Si une recherche est en cours,
+         * masquer les catégories sans candidat correspondant.
+         *
+         * Sans recherche, toutes les catégories restent visibles.
+         */
+
+        categoryBlock.hidden =
+            searchTerm !== "" && visibleInCategory === 0;
+
+    });
+
+    /* Afficher ou masquer le bouton d'effacement */
+
+    if (clearCandidateSearch) {
+
+        clearCandidateSearch.hidden =
+            searchTerm === "";
+
+    }
+
+    /* Compteur de résultats */
+
+    if (searchResultsInfo) {
+
+        if (searchTerm === "") {
+
+            searchResultsInfo.textContent =
+                `${totalCandidates} candidat(s) disponible(s) dans ce domaine.`;
+
+        } else {
+
+            searchResultsInfo.textContent =
+                `${visibleCandidates} résultat(s) sur ${totalCandidates} candidat(s).`;
+
+        }
+
+    }
+
+    /* Aucun résultat trouvé */
+
+    if (noSearchResults) {
+
+        noSearchResults.hidden =
+            searchTerm === "" || visibleCandidates > 0;
+
+    }
+
+}
+
+
+/* Recherche automatique pendant la saisie */
+
+if (candidateSearchInput) {
+
+    candidateSearchInput.addEventListener(
+        "input",
+        filterCandidates
+    );
+
+}
+
+
+/* Bouton pour effacer la recherche */
+
+if (clearCandidateSearch) {
+
+    clearCandidateSearch.addEventListener("click", () => {
+
+        if (!candidateSearchInput) {
+            return;
+        }
+
+        candidateSearchInput.value = "";
+
+        filterCandidates();
+
+        candidateSearchInput.focus();
+
+    });
+
+}
+
+
+/* Bouton pour réafficher tous les candidats */
+
+const resetCandidateSearch =
+    document.getElementById("resetCandidateSearch");
+
+if (resetCandidateSearch) {
+
+    resetCandidateSearch.addEventListener("click", () => {
+
+        if (!candidateSearchInput) {
+            return;
+        }
+
+        candidateSearchInput.value = "";
+
+        filterCandidates();
+
+        candidateSearchInput.focus();
+
+    });
+
+}
+
+/* ==========================================
    VARIABLES GLOBALES
 ========================================== */
 
@@ -206,6 +400,9 @@ async function loadCategoriesAndCandidates() {
                 </div>
             `;
 
+            filterCandidates();
+            hideLoader();
+
             return;
         }
 
@@ -283,6 +480,7 @@ async function loadCategoriesAndCandidates() {
 
         });
 
+        filterCandidates();
         hideLoader();
 
     } catch(error) {

@@ -259,7 +259,7 @@ function renderDomaines(domaines) {
             <div class="domaine-image">
 
                 <img
-                    src="${domaine.image}"
+                    src="images/talents.png"
                     alt="${domaine.name}"
                 >
 
