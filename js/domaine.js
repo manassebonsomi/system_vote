@@ -440,7 +440,7 @@ async function loadCategoriesAndCandidates() {
 
                     <img
                         src="${candidate.image}"
-                        alt="${candidate.name}"
+                        alt="${candidate.name}" loading="lazy"
                     >
 
                     <div class="candidate-info">
