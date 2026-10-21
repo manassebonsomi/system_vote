@@ -438,9 +438,11 @@ async function loadCategoriesAndCandidates() {
 
                 <div class="candidate-card">
 
-                    <img
+                   <img
                         src="${candidate.image}"
-                        alt="${candidate.name}" loading="lazy"
+                        alt="${candidate.name}"
+                        loading="lazy"
+                        decoding="async"
                     >
 
                     <div class="candidate-info">
