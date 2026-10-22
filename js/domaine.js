@@ -443,7 +443,7 @@ async function loadCategoriesAndCandidates() {
                         alt="${candidate.name}"
                         loading="lazy"
                         decoding="async"
-                    >
+                    />
 
                     <div class="candidate-info">
 
