@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDvzRWbx1doDwXlLGTUDPihRvRWwz4wYLI",
+    // apiKey: "AIzaSyDvzRWbx1doDwXlLGTUDPihRvRWwz4wYLI",
     authDomain: "norbertine-matanda.firebaseapp.com",
     projectId: "norbertine-matanda",
     storageBucket: "norbertine-matanda.firebasestorage.app",
