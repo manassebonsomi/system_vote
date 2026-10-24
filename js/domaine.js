@@ -451,10 +451,6 @@ async function loadCategoriesAndCandidates() {
                             ${candidate.name}
                         </h3>
 
-                        <p>
-                            ${candidate.votes || 0} vote(s)
-                        </p>
-
                         <a
                             class="vote-btn-card"
                             onclick="openVote(

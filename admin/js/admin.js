@@ -480,9 +480,7 @@ async function loadCandidates(){
 
             <td>
 
-                <img
-                src="${candidate.image}"
-                width="50">
+                -
 
             </td>
 
@@ -534,7 +532,7 @@ async function deleteCandidate(id){
    VOTES
 =================================== */
 
-async function loadVotes(){
+/* async function loadVotes(){
 
     const response =
     await fetch(API + "?action=getVotes");
@@ -571,7 +569,7 @@ async function loadVotes(){
 
     });
 
-}
+} */
 
 /* ===================================
    STATISTIQUES
